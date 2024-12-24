@@ -111,7 +111,7 @@
          width: 100%; 
          display: flex; 
          align-items: center; 
-         justify-content: flex-end; 
+         justify-content: flex-end; /* This aligns the buttons to the right */
          padding: 10px 40px; 
          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
          position: fixed; 
@@ -141,7 +141,6 @@
             color: white; 
             background-color: orange; 
             font-weight: bold; 
-            font-size: clamp(14px, 2vw, 24px);
             margin-left: 20px; 
             padding: 10px 15px; 
             border-radius: 5px;">
@@ -151,7 +150,6 @@
      style="font-weight: bold; 
             margin-left: 20px; 
             text-decoration: none; 
-            font-size: clamp(14px, 2vw, 24px);
             color: black; 
             background-color: lightblue; 
             padding: 10px 15px; 
@@ -164,6 +162,7 @@
          style="height: 40px; margin-left: 10px;">
   </a>
 </header>
+
 
 <!-- Font link for Arabic style -->
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
@@ -371,9 +370,6 @@ color: black; /* لون النص */" class="section-title">✅اختر مستو�
     </div>
   </div>
 </div>
-
-
-    <!-- أكمل باقي الكليات بنفس الطريقة -->
   </div>
   <script>
     function toggleDropdown(button) {
