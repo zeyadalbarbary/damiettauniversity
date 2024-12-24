@@ -8,74 +8,86 @@
   <link rel="icon" href="https://blogger.googleusercontent.com/img/a/AVvXsEhIk8PbPICirvYhk2acxutaez41cVgsrsqKpY6EX6pw6SAiJK3qC9KUnhB4P-_o8Lb774fTWgw-BxJBoMTXVCQ88rvsKQjt2wpam2MUiOFoVNU_3Hmihrr0Qt2szLGdM2WiPY6ik93Kc622lris80vep2lw16lGx-YkMp16o5TnGOJjJ2tECnOh9QhwdD0">
   <style>
     body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(14px, 2vw, 24px);
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
+  min-height: 100vh; /* لجعل الصفحة تمتد على كامل الارتفاع */
+}
     .container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: center;
       gap: 20px;
+      padding-top: 10px;
     }
     .section {
-      border: 2px solid orange;
-      border-radius: 10px;
-      text-align: center;
-      padding: 10px;
-      width: calc(25% - 20px);
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: relative;
-    }
+  border: 5px solid orange;
+  border-radius: 30px;
+  text-align: center;
+  padding: 20px;
+  width: calc(25% - 20px);  /* عرض المربع كما هو */
+  height: 380px;  /* زيادة طول المربع */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
     .section img {
-      width: 100%;
+      width: 80%;
       height: auto;
       border-radius: 10px 10px 0 0;
     }
     .section h6 {
+      font-size: 30px;
       margin: 10px 0;
     }
     .dropdown {
-      margin-top: 10px;
+      margin-top: 50px;
       position: relative;
     }
     .dropdown button {
-      background-color: orange;
-      border: none;
-      color: white;
-      padding: 10px;
-      cursor: pointer;
-      width: 100%;
-      font-size: 16px;
-      border-radius: 5px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  width: 60%;
+  font-size: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 4px rgba(210, 236, 16, 0.2);
+  position: absolute; /* إضافة هذه السطر لضبط الموقع */
+  bottom: 0px; /* تحديد المسافة من أسفل المربع */
+  left: 50%; /* وضع الزر في المنتصف أفقيا */
+  transform: translateX(-50%); /* محاذاة الزر تماماً في المنتصف */
+}
+
     .dropdown button:hover {
       background-color: #e69500;
     }
     .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      border-radius: 5px;
-      overflow: hidden;
-    }
+  display: none;
+  position: absolute;
+  top: 100%;  /* وضع القائمة تحت الزر */
+  left: 50%;  /* تمركز القائمة أفقياً */
+  transform: translateX(-50%);  /* محاذاة القائمة تماماً في المنتصف */
+  width: 60%;  /* جعل العرض نفس عرض الزر */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+}
     .dropdown-content a {
       display: block;
       padding: 10px;
       text-decoration: none;
       color: black;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #0c0cf4;
     }
     .dropdown-content a:last-child {
       border-bottom: none;
@@ -94,10 +106,27 @@
   </style>
 </head>
 <body style="background-color: #fff8dc; margin-top: 120px; margin-bottom: 120px;">
-<header style="background-color: white; display: flex; align-items: center; justify-content: flex-end; padding: 10px 40px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; max-width: 1200px; margin: 0 auto; box-sizing: border-box; right: 0;">
-  <a href="https://fato.me/s/koshk?isadmin=true" target="_blank" style="text-decoration: none; color: black; font-size: 20px; font-weight: bold; margin-left: 20px;">الكتب الجامعية</a>
-  <a href="https://bookline.shop" target="_blank" style="text-decoration: none; color: black; font-size: 20px; font-weight: bold; margin-left: 20px;">الصفحة الرئيسية</a>
-  <span style="font-size: 20px; font-weight: bold; margin-left: 20px;">جامعة دمياط</span>
+<header 
+style="background-color: white;
+ width: 100%; display: flex; align-items: center;
+   justify-content: flex-end;
+    padding: 10px 40px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     position: fixed;
+     font-size: clamp(14px, 2vw, 24px);
+      font-family: Arial, sans-serif;
+      top: 0; left: 0;
+       width: 100%;
+        z-index: 1000;
+         max-width: 1200px;
+          margin: 0 auto;
+           box-sizing: border-box;
+           right: 0;">
+  <a href="https://fato.me/s/koshk?isadmin=true" target="_blank" style="font-size: clamp(14px, 2vw, 24px);
+      font-family: Arial, sans-serif;text-decoration: none; color: black; font-weight: bold; margin-left: 20px;">الكتب الجامعية</a>
+  <a href="https://bookline.shop" target="_blank" style="font-size: clamp(14px, 2vw, 24px);
+      font-family: Arial, sans-serif;text-decoration: none; color: black; font-weight: bold; margin-left: 20px;">الصفحة الرئيسية</a>
+  <span style="font-size: clamp(14px, 2vw, 30px);
+      font-family: Arial, sans-serif;font-weight: bold; margin-left: 20px;">جامعة دمياط</span>
   <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhIk8PbPICirvYhk2acxutaez41cVgsrsqKpY6EX6pw6SAiJK3qC9KUnhB4P-_o8Lb774fTWgw-BxJBoMTXVCQ88rvsKQjt2wpam2MUiOFoVNU_3Hmihrr0Qt2szLGdM2WiPY6ik93Kc622lris80vep2lw16lGx-YkMp16o5TnGOJjJ2tECnOh9QhwdD0" alt="Logo" style="height: 40px;">
 </header>
 
@@ -306,13 +335,23 @@
     }
   </script>
 
-<footer style="background-color: orange; color: black; padding: 20px; text-align: center; position: fixed; bottom: 0; left: 0; width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px;">
+<footer style="background-color: orange;
+color: black;
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+text-align: center;
+margin-top: auto; /* يجبر التذييل على البقاء أسفل الصفحة */
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+padding: 10px 0;">
   <a href="https://bookline.shop" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">BOOKLINE.SHOP</a>
   <a href="https://fato.me/s/koshk?isadmin=true" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">الكتب الجامعية</a>
-  <p style="margin: 0;">
-    Powered By 
-    <a href="https://www.facebook.com/zeyadalbarbary" target="_blank" style="text-decoration: none; color: blue; font-weight: bold;">Zeyad Albarbary</a>
-  </p>
+  <p style="display: inline-block; vertical-align: middle;">Bowered By</p>
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgmPo4-E3CXqzVpsqLqg3mwzgzQxALd-K5No39msQNvcECMAXMG5j5NPCoJynIJHXwht9I_Z0xVb9f9hszy-aOvTWpjlyJ89OoS3sybuRriVSnJaoMKxXiy45hLO-ZleLmqwKfHp61Kb5zfWogFijKAjykhgHXElHU5rAzDu13GWaiiGf10tDpIbilBUyo" alt="Logo" style="height: 40px; margin-left: 10px; vertical-align: middle;">
 </footer>
 
 </body>
