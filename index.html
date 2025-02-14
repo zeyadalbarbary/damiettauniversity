@@ -1,140 +1,401 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جامعة دمياط</title>
+  <link rel="icon" href="https://blogger.googleusercontent.com/img/a/AVvXsEhIk8PbPICirvYhk2acxutaez41cVgsrsqKpY6EX6pw6SAiJK3qC9KUnhB4P-_o8Lb774fTWgw-BxJBoMTXVCQ88rvsKQjt2wpam2MUiOFoVNU_3Hmihrr0Qt2szLGdM2WiPY6ik93Kc622lris80vep2lw16lGx-YkMp16o5TnGOJjJ2tECnOh9QhwdD0">
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(14px, 2vw, 24px);
+      font-family: Arial, sans-serif;
+  min-height: 100vh; /* لجعل الصفحة تمتد على كامل الارتفاع */
+}
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding-top: 10px;
+    }
+    .section {
+  border: 5px solid orange;
+  border-radius: 30px;
+  text-align: center;
+  padding: 20px;
+  width: calc(25% - 20px);  /* عرض المربع كما هو */
+  height: 380px;  /* زيادة طول المربع */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+    .section img {
+      width: 80%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+    }
+    .section h6 {
+      font-size: 30px;
+      margin: 10px 0;
+    }
+    .dropdown {
+      margin-top: 50px;
+      position: relative;
+    }
+    .dropdown button {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  width: 60%;
+  font-size: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 4px rgba(210, 236, 16, 0.2);
+  position: absolute; /* إضافة هذه السطر لضبط الموقع */
+  bottom: 0px; /* تحديد المسافة من أسفل المربع */
+  left: 50%; /* وضع الزر في المنتصف أفقيا */
+  transform: translateX(-50%); /* محاذاة الزر تماماً في المنتصف */
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
-
-        /* الحاوية الأساسية */
-        .container {
-            width: 100%;
-            margin: 20px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px; /* مسافة صغيرة بالعرض */
-            flex-wrap: wrap;
-            padding: 10px;
-        }
-
-        /* تصميم الأزرار */
-        .div-rectangular {
-            width: 180px;
-            height: 90px;
-            background: #ff914d;
-            border: 4px solid #33348e;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            text-align: center;
-            margin-bottom: 150px; /* زيادة المسافة بالطول */
-        }
-        .div-rectangular:hover { transform: translateY(-5px); }
-        .div-rectangular h6 {
-            font-size: 1.2em;
-            margin: 0;
-            color: #33348e;
-            font-weight: bold;
-        }
-
-        /* القائمة المنسدلة */
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            min-width: 160px;
-            padding: 10px 0;
-            text-align: center;
-            z-index: 999;
-        }
-        .dropdown a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: #33348e;
-            font-weight: bold;
-        }
-        .dropdown a:hover { background: #ffde59; }
-        .div-rectangular:hover .dropdown { display: block; }
-
-        /* استجابة للأجهزة الصغيرة */
-        @media (max-width: 600px) {
-            .container { gap: 10px; } /* تصغير المسافة أكثر */
-            .div-rectangular {
-                width: 160px;
-                height: 80px;
-            }
-            .div-rectangular h6 { font-size: 1em; }
-        }
-    </style>
+    .dropdown button:hover {
+      background-color: #e69500;
+    }
+    .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;  /* وضع القائمة تحت الزر */
+  left: 50%;  /* تمركز القائمة أفقياً */
+  transform: translateX(-50%);  /* محاذاة القائمة تماماً في المنتصف */
+  width: 60%;  /* جعل العرض نفس عرض الزر */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+      border-bottom: 1px solid #0c0cf4;
+    }
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .show {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .section {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <a href="https://storebooks.shop/s/Products" target="_blank" class="div-rectangular">
-            <h6>المضاف حديثاً</h6>
-        </a>
+<body style="background-color: #fff8dc; margin-top: 120px; margin-bottom: 120px;">
+  <header 
+  style="background-color: white;
+         width: 100%; 
+         display: flex; 
+         align-items: center; 
+         justify-content: center; /* This aligns the buttons to the right */
+         padding: 10px 40px; 
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+         position: fixed; 
+         font-size: clamp(14px, 2vw, 24px); 
+         font-family: 'Tajawal', sans-serif; 
+         top: 0; 
+         left: 0; 
+         z-index: 1000; 
+         max-width: 1200px; 
+         margin: 0 auto; 
+         box-sizing: border-box; 
+         right: 0;">
+  <a href="https://fato.me/s/koshk?isadmin=true" target="_blank" 
+     style="font-size: clamp(14px, 2vw, 24px);
+            font-family: 'Tajawal', sans-serif; 
+            text-decoration: none; 
+            color: white; 
+            background-color: orange; 
+            font-weight: bold; 
+            margin-left: 20px; 
+            padding: 10px 15px; 
+            border-radius: 5px;">
+    الكتب الجامعية
+  </a>
+  <a href="https://bookline.shop" target="_blank" 
+     style="text-decoration: none; 
+            color: white; 
+            background-color: orange; 
+            font-weight: bold; 
+            margin-left: 20px; 
+            padding: 10px 15px; 
+            border-radius: 5px;">
+    الصفحة الرئيسية
+  </a>
+  <a href="https://zeyadalbarbary.github.io/damiettauniversity/" 
+     style="font-weight: bold; 
+            margin-left: 20px; 
+            text-decoration: none; 
+            color: black; 
+            background-color: lightblue; 
+            padding: 10px 15px; 
+            border-radius: 5px; 
+            display: flex; 
+            align-items: center;">
+    <span>جامعة دمياط</span>
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhIk8PbPICirvYhk2acxutaez41cVgsrsqKpY6EX6pw6SAiJK3qC9KUnhB4P-_o8Lb774fTWgw-BxJBoMTXVCQ88rvsKQjt2wpam2MUiOFoVNU_3Hmihrr0Qt2szLGdM2WiPY6ik93Kc622lris80vep2lw16lGx-YkMp16o5TnGOJjJ2tECnOh9QhwdD0" 
+         alt="Logo" 
+         style="height: 40px; margin-left: 10px;">
+  </a>
+</header>
 
-        <div class="div-rectangular">
-            <h6>أقسام الكتب</h6>
-            <div class="dropdown">
-                <a href="https://storebooks.shop/s/Products?type=روايات" target="_blank">روايات</a>
-                <a href="https://storebooks.shop/s/Products?type=عام" target="_blank">عام</a>
-                <a href="https://storebooks.shop/s/Products?type=ديني" target="_blank">ديني</a>
-                <a href="https://storebooks.shop/s/Products?type=اثارة" target="_blank">إثارة</a>
-                <a href="https://storebooks.shop/s/Products?type=خيال" target="_blank">خيال</a>
-                <a href="https://storebooks.shop/s/Products?type=إدارة أعمال" target="_blank">إدارة أعمال</a>
-            </div>
+
+<!-- Font link for Arabic style -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<h2 style="text-align: center; /* توسيط النص أفقيًا */
+margin: 0 auto; /* يضمن عدم وجود فراغات جانبية */
+display: flex; /* لجعل العنصر مرنًا */
+justify-content: center; /* توسيط النص أفقيًا */
+align-items: center; /* توسيط النص عموديًا */
+height: 100px; /* لتحديد ارتفاع مناسب */
+font-family: 'Arial', sans-serif; /* تغيير نوع الخط */
+font-size: clamp(20px, 2vw, 30px);
+color: black; /* لون النص */" class="section-title">✅اختر مستواك الدراسى من اسفل كليتك✅ 
+</h2>
+
+  <div class="container">
+    <!-- الكليات -->
+    <div class="section">
+      <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-51CBV.jpg" alt="كلية التربية">
+      <h6>كلية التربية</h6>
+      <div class="dropdown">
+        <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+        <div class="dropdown-content">
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
         </div>
-
-        <div class="div-rectangular">
-            <h6>الكاتب</h6>
-            <div class="dropdown">
-                <a href="https://storebooks.shop/s/Products?type=عمرو عبد الحميد" target="_blank">عمرو عبد الحميد</a>
-                <a href="https://storebooks.shop/s/Products?type=أسامة المسلم" target="_blank">أسامة المسلم</a>
-                <a href="https://storebooks.shop/s/Products?type=حنان لاشين" target="_blank">حنان لاشين</a>
-                <a href="https://storebooks.shop/s/Products?type=أدهم الشرقاوي" target="_blank">أدهم الشرقاوي</a>
-                <a href="https://storebooks.shop/s/Products?type=أحمد آل حمدان" target="_blank">أحمد آل حمدان</a>
-                <a href="https://storebooks.shop/s/Products?type=يوسف الحسيني" target="_blank">يوسف الحسيني</a>
-            </div>
-        </div>
-
-        <div class="div-rectangular">
-            <h6>دار النشر</h6>
-            <div class="dropdown">
-                <a href="https://www.aseeralkotb.com/ar" target="_blank">عصير الكتب</a>
-                <a href="https://dardawen.com/" target="_blank">دون</a>
-                <a href="https://www.shorouk.com/" target="_blank">الشروق</a>
-            </div>
-        </div>
-
-        <a href="http://accessories.storebooks.shop" target="_blank" class="div-rectangular">
-            <h6>إكسسوارات وديكورات</h6>
-        </a>
-
-        <a href="http://stationery.storebooks.shop" target="_blank" class="div-rectangular">
-            <h6>أدوات مكتبية</h6>
-        </a>
-
-        <a href="https://storebooks.shop/s/p251786" target="_blank" class="div-rectangular">
-            <h6>طلبات الجملة</h6>
-        </a>
-
-        <a href="https://storebooks.shop" target="_blank" class="div-rectangular">
-            <h6>المدونة</h6>
-        </a>
+      </div>
     </div>
+    <div class="section">
+      <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-I0HBN.jpg" alt="كلية العلوم">
+      <h6>كلية العلوم</h6>
+      <div class="dropdown">
+        <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+        <div class="dropdown-content">
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-KR5SS.jpg" alt="كلية التجارة">
+      <h6>كلية التجارة</h6>
+      <div class="dropdown">
+        <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+        <div class="dropdown-content">
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-0HIOB.jpg" alt="كلية الآداب">
+      <h6>كلية الآداب</h6>
+      <div class="dropdown">
+        <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+        <div class="dropdown-content">
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-XV1QG.jpg" alt="كلية الزراعة">
+      <h6>كلية الزراعة</h6>
+      <div class="dropdown">
+        <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+        <div class="dropdown-content">
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+          <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+        </div>
+      </div>
+    </div>
+	<div class="section">
+  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-Y487C.jpg" alt="كلية التربية النوعية">
+  <h6>كلية التربية النوعية</h6>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+    <div class="dropdown-content">
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-RNDFR.jpg" alt="كلية التربية الرياضية">
+  <h6>كلية التربية الرياضية</h6>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+    <div class="dropdown-content">
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-354QF.jpg" alt="كلية الفنون التطبيقية">
+  <h6>كلية الفنون التطبيقية</h6>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+    <div class="dropdown-content">
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-UTCYR.jpg" alt="كلية الهندسة">
+  <h6>كلية الهندسة</h6>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+    <div class="dropdown-content">
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-EJ5BM.jpg" alt="كلية الحقوق">
+  <h6>كلية الحقوق</h6>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+    <div class="dropdown-content">
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-8M5JZ.jpg" alt="كلية الآثار">
+  <h6>كلية الآثار</h6>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+    <div class="dropdown-content">
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-8D0N4.jpg" alt="كلية التمريض">
+  <h6>كلية التمريض</h6>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+    <div class="dropdown-content">
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-A5ALF.jpg" alt="كلية الحاسبات والذكاء الاصطناعي">
+  <h6>كلية الحاسبات والذكاء الاصطناعي</h6>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+    <div class="dropdown-content">
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-9N1KW.jpg" alt="كلية الطب">
+  <h6>كلية الطب</h6>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
+    <div class="dropdown-content">
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الأول</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثاني</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الثالث</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الرابع</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى الخامس</a>
+      <a href="https://fato.me/s/koshk/p236498" target="_blank">المستوى السادس</a>
+    </div>
+  </div>
+</div>
+  </div>
+  <script>
+    function toggleDropdown(button) {
+      const dropdown = button.nextElementSibling;
+      dropdown.classList.toggle("show");
+    }
+  </script>
+
+<footer style="background-color: orange;
+color: black;
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+text-align: center;
+margin-top: auto; /* يجبر التذييل على البقاء أسفل الصفحة */
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+padding: 10px 0;">
+  <a href="https://bookline.shop" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">BOOKLINE.SHOP</a>
+  <a href="https://fato.me/s/koshk?isadmin=true" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">الكتب الجامعية</a>
+  <p style="display: inline-block; vertical-align: middle;">Bowered By</p>
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgmPo4-E3CXqzVpsqLqg3mwzgzQxALd-K5No39msQNvcECMAXMG5j5NPCoJynIJHXwht9I_Z0xVb9f9hszy-aOvTWpjlyJ89OoS3sybuRriVSnJaoMKxXiy45hLO-ZleLmqwKfHp61Kb5zfWogFijKAjykhgHXElHU5rAzDu13GWaiiGf10tDpIbilBUyo" alt="Logo" style="height: 40px; margin-left: 10px; vertical-align: middle;">
+</footer>
+
 </body>
 </html>
