@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* الحاوية الأساسية للأقسام */
         .container {
             width: 100%;
             margin: 20px auto;
@@ -12,10 +14,11 @@
             justify-content: center;
             align-items: center;
             gap: 15px;
-            overflow-x: auto;
-            white-space: nowrap;
+            flex-wrap: wrap; /* جعل العناصر تنتقل للسطر التالي إذا لم تكن هناك مساحة كافية */
             padding: 10px;
         }
+
+        /* تصميم الأزرار */
         .div-rectangular {
             width: 150px;
             height: 80px;
@@ -29,10 +32,17 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             position: relative;
-            flex-shrink: 0;
         }
         .div-rectangular:hover { transform: translateY(-5px); }
-        .div-rectangular h6 { font-size: 1em; margin: 0; color: #004aac; font-weight: bold; }
+        .div-rectangular h6 { 
+            font-size: 1em; 
+            margin: 0; 
+            color: #004aac; 
+            font-weight: bold; 
+            text-align: center;
+        }
+
+        /* القائمة المنسدلة */
         .dropdown {
             display: none;
             position: absolute;
@@ -56,6 +66,20 @@
         }
         .dropdown a:hover { background: #ffde59; }
         .div-rectangular:hover .dropdown { display: block; }
+
+        /* تحسين العرض على الشاشات الصغيرة */
+        @media (max-width: 600px) {
+            .container {
+                flex-wrap: wrap; /* السماح للعناصر بالنزول لسطر جديد */
+            }
+            .div-rectangular {
+                width: 130px;
+                height: 70px;
+            }
+            .div-rectangular h6 {
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
