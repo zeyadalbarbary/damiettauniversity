@@ -1,5 +1,4 @@
 /* Main colors */
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap');
 
 :root {
     --main-bg-color: #41979a;
@@ -18,7 +17,7 @@
 }
 
 body {
-    font-family: 'Tajawal', sans-serif !important;
+    font-family: Helvetica-reg, Helvetica-bd;
     background-color: #fff;
 }
 
@@ -837,7 +836,7 @@ nav .input-group:focus-within {
 
     .dropdown-menu-arrow:before,
     .dropdown-menu-arrow:after {
-        content: '';
+        content:;
         position: absolute;
         display: block;
         width: 0;
@@ -1312,7 +1311,7 @@ footer .contact-social .feather {
 
     .dropdown-menu-arrow-tags:before,
     .dropdown-menu-arrow-tags:after {
-        content: '';
+        content:;
         position: absolute;
         display: block;
         width: 0;
@@ -1547,7 +1546,7 @@ footer .contact-social .feather {
 
     .dropdown-menu-arrow-order:before,
     .dropdown-menu-arrow-order:after {
-        content: '';
+        content:;
         position: absolute;
         display: block;
         width: 0;

@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap');
-
 body {
     /*background: linear-gradient(#FFFFFF, #F5FFFF);*/
     /*background: rgba(65, 151, 154, 0.08);*/
     background-color: #fff;
-    font-family: 'Tajawal', sans-serif !important;
 }
 
 
@@ -118,94 +115,6 @@ body {
     border-radius: 64px;
     box-shadow: 0 3px 10px 0 rgba(18, 45, 46, 0.1);
 }
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding-top: 10px;
-  }
-  .section {
-border: 5px solid orange;
-border-radius: 30px;
-text-align: center;
-padding: 20px;
-width: calc(25% - 20px);  /* عرض المربع كما هو */
-height: 380px;  /* زيادة طول المربع */
-background-color: #fff;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-position: relative;
-}
-  .section img {
-    width: 80%;
-    height: auto;
-    border-radius: 10px 10px 0 0;
-  }
-  .section h6 {
-    font-size: 30px;
-    margin: 10px 0;
-  }
-  .dropdown {
-    margin-top: 50px;
-    position: relative;
-  }
-  .dropdown button {
-background-color: orange;
-border: none;
-color: white;
-padding: 10px;
-cursor: pointer;
-width: 60%;
-font-size: 20px;
-border-radius: 20px;
-display: flex;
-justify-content: center;
-align-items: center;
-box-shadow: 0 5px 4px rgba(210, 236, 16, 0.2);
-position: absolute; /* إضافة هذه السطر لضبط الموقع */
-bottom: 0px; /* تحديد المسافة من أسفل المربع */
-left: 50%; /* وضع الزر في المنتصف أفقيا */
-transform: translateX(-50%); /* محاذاة الزر تماماً في المنتصف */
-}
-
-  .dropdown button:hover {
-    background-color: #e69500;
-  }
-  .dropdown-content {
-display: none;
-position: absolute;
-top: 100%;  /* وضع القائمة تحت الزر */
-left: 50%;  /* تمركز القائمة أفقياً */
-transform: translateX(-50%);  /* محاذاة القائمة تماماً في المنتصف */
-width: 60%;  /* جعل العرض نفس عرض الزر */
-background-color: #fff;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-z-index: 1;
-border-radius: 5px;
-overflow: hidden;
-}
-  .dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    border-bottom: 1px solid #0c0cf4;
-  }
-  .dropdown-content a:last-child {
-    border-bottom: none;
-  }
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  .show {
-    display: block;
-  }
-  @media (max-width: 768px) {
-    .section {
-      width: 100%;
-    }
-  }
 
 
 /* items  */
