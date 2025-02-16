@@ -672,104 +672,6 @@
         flex-wrap: wrap;
         padding: 15px;
       }
-            
-/* تنسيق الحاوية الرئيسية */
-.container1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding-top: 10px;
-}
-
-/* تصميم الأقسام */
-.section {
-  border: 5px solid orange;
-  border-radius: 30px;
-  text-align: center;
-  padding: 20px;
-  width: calc(25% - 20px);
-  height: 380px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-
-/* تنسيق الصور داخل الأقسام */
-.section img {
-  width: 80%;
-  height: auto;
-  border-radius: 10px 10px 0 0;
-}
-
-/* تنسيق عناوين الأقسام */
-.section h6 {
-  font-size: 30px;
-  margin: 10px 0;
-}
-
-/* إعدادات القوائم المنسدلة */
-.dropdown {
-  margin-top: 50px;
-  position: relative;
-}
-
-.dropdown button {
-  background-color: orange;
-  border: none;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  width: 60%;
-  font-size: 20px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 5px 4px rgba(210, 236, 16, 0.2);
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.dropdown button:hover {
-  background-color: #e69500;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-  border-bottom: 1px solid #0c0cf4;
-}
-
-.dropdown-content a:last-child {
-  border-bottom: none;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.show {
-  display: block;
-}
       .iframe-container {
         width: 100%;
         max-width: 1200px;
@@ -893,15 +795,6 @@
 
 
 
-<div class="mx-auto text-center text-capitalize" id="emptyitem" style="display:none">
-
-    <img class="d-block mx-auto" src="./index_files/icon-cart-empty.svg" alt="icon-cart-empty">
-    <div>
-        لايوجد منتجات حتى الآن
-    </div>
-
-</div>
-
 
 <script type="text/javascript">
     $(function () {
@@ -942,198 +835,17 @@ color: black; /* لون النص */" class="section-title">✅اختر مستو�
 
   <div class="container1">
     <!-- الكليات -->
-    <div class="section">
-      <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-51CBV.jpg" alt="كلية التربية">
-      <h6>كلية التربية</h6>
-      <div class="dropdown">
-        <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-        <div class="dropdown-content">
-          <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-          <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-          <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-          <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-I0HBN.jpg" alt="كلية العلوم">
-      <h6>كلية العلوم</h6>
-      <div class="dropdown">
-        <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-        <div class="dropdown-content">
-          <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-          <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-          <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-          <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-KR5SS.jpg" alt="كلية التجارة">
-      <h6>كلية التجارة</h6>
-      <div class="dropdown">
-        <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-        <div class="dropdown-content">
-          <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-          <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-          <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-          <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-0HIOB.jpg" alt="كلية الآداب">
-      <h6>كلية الآداب</h6>
-      <div class="dropdown">
-        <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-        <div class="dropdown-content">
-          <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-          <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-          <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-          <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-XV1QG.jpg" alt="كلية الزراعة">
-      <h6>كلية الزراعة</h6>
-      <div class="dropdown">
-        <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-        <div class="dropdown-content">
-          <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-          <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-          <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-          <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-        </div>
-      </div>
-    </div>
-	<div class="section">
-  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-Y487C.jpg" alt="كلية التربية النوعية">
-  <h6>كلية التربية النوعية</h6>
-  <div class="dropdown">
-    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-    <div class="dropdown-content">
-      <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-      <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-      <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-      <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-    </div>
-  </div>
-</div>
 
-<div class="section">
-  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-RNDFR.jpg" alt="كلية التربية الرياضية">
-  <h6>كلية التربية الرياضية</h6>
-  <div class="dropdown">
-    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-    <div class="dropdown-content">
-      <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-      <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-      <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-      <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-    </div>
-  </div>
-</div>
+	  <div id="content"></div>
 
-<div class="section">
-  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-354QF.jpg" alt="كلية الفنون التطبيقية">
-  <h6>كلية الفنون التطبيقية</h6>
-  <div class="dropdown">
-    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-    <div class="dropdown-content">
-      <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-      <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-      <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-      <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-UTCYR.jpg" alt="كلية الهندسة">
-  <h6>كلية الهندسة</h6>
-  <div class="dropdown">
-    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-    <div class="dropdown-content">
-      <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-      <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-      <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-      <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-EJ5BM.jpg" alt="كلية الحقوق">
-  <h6>كلية الحقوق</h6>
-  <div class="dropdown">
-    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-    <div class="dropdown-content">
-      <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-      <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-      <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-      <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-8M5JZ.jpg" alt="كلية الآثار">
-  <h6>كلية الآثار</h6>
-  <div class="dropdown">
-    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-    <div class="dropdown-content">
-      <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-      <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-      <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-      <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-8D0N4.jpg" alt="كلية التمريض">
-  <h6>كلية التمريض</h6>
-  <div class="dropdown">
-    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-    <div class="dropdown-content">
-      <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-      <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-      <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-      <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-A5ALF.jpg" alt="كلية الحاسبات والذكاء الاصطناعي">
-  <h6>كلية الحاسبات والذكاء الاصطناعي</h6>
-  <div class="dropdown">
-    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-    <div class="dropdown-content">
-      <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-      <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-      <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-      <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-    </div>
-  </div>
-</div>
-<div class="section">
-  <img src="https://fatoradrive.blob.core.windows.net/tfk0012192024/media-9N1KW.jpg" alt="كلية الطب">
-  <h6>كلية الطب</h6>
-  <div class="dropdown">
-    <button onclick="toggleDropdown(this)">المستوى <span>▼</span></button>
-    <div class="dropdown-content">
-      <a href="https://bookline.shop" target="_blank">المستوى الأول</a>
-      <a href="https://www.bookline.shop" target="_blank">المستوى الثاني</a>
-      <a href="https://zeyad.bookline.shop" target="_blank">المستوى الثالث</a>
-      <a href="https://koshk.bookline.shop" target="_blank">المستوى الرابع</a>
-      <a href="https://www.facebook.com/zeyadalbarbary" target="_blank">المستوى الخامس</a>
-      <a href="https://www.facebook.com/bookline.sh0p" target="_blank">المستوى السادس</a>
-    </div>
-  </div>
-</div>
-  </div>
+<script>
+    fetch('damietta.html')
+        .then(response => response.text()) // تحويل الاستجابة إلى نص
+        .then(data => {
+            document.getElementById('content').innerHTML = data; // إدراج المحتوى داخل div
+        })
+        .catch(error => console.error('Error loading the page:', error));
+</script>
 
 
 
