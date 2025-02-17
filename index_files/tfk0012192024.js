@@ -95,7 +95,7 @@
         <span class='en-only'> Shop Now 
         </span>
       </a>   
-      <a href="https:summaries.storebooks.shop" class="btn hvr-glow hvr-icon-push" style="margin-left: 10px;"> 
+      <a href="https://summaries.storebooks.shop" class="btn hvr-glow hvr-icon-push" style="margin-left: 10px;"> 
         <i class="hvr-icon" data-feather="book">
         </i>
         <span class='ar-only'> ملخصات ومراجعات 
