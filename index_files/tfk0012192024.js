@@ -36,8 +36,8 @@
         display: none !important;
       }
       .section-title {
-        font-size: 2em;
-        color: #333;
+        font-size: 1.5em;
+        color: #000000;
         margin: 20px 0;
         text-align: center;
 
