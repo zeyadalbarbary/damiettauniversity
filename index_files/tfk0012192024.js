@@ -36,7 +36,7 @@
         display: none !important;
       }
       .section-title {
-        font-size: 1.5em;
+        font-size: 3em;
         color: #000000;
         margin: 20px 0;
         text-align: center;
@@ -72,6 +72,8 @@
           height: 6550px;
           /* زودنا الارتفاع 3 أضعاف */
         }
+        .section-title {
+        font-size: 1em;
       }
     </style>
   </head>
