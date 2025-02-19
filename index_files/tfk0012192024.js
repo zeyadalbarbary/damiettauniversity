@@ -90,9 +90,9 @@
       <a href="https://storebooks.shop" class="btn hvr-glow hvr-icon-push"> 
         <i class="hvr-icon" data-feather="shopping-bag">
         </i>
-        <span class='ar-only'> تسوق الآن 
+        <span class='ar-only'> الصفحة الرئيسية
         </span>
-        <span class='en-only'> Shop Now 
+        <span class='en-only'> Home Page 
         </span>
       </a>   
       <a href="https://summaries.storebooks.shop" class="btn hvr-glow hvr-icon-push" style="margin-left: 10px;"> 
